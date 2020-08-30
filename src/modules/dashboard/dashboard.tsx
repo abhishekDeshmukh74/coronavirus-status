@@ -24,21 +24,19 @@ export const Dashboard = () => {
   }
 
   return (
-    <div>
-      <div className="card-list">
-        {data.features.map((item, index) => {
-          return (
-            <CountryCard
-              key={index}
-              countryRegion={item.attributes.Country_Region}
-              confirmed={item.attributes.Confirmed}
-              active={item.attributes.Active}
-              deaths={item.attributes.Deaths}
-              recovered={item.attributes.Recovered}
-            />
-          );
-        })}
-      </div>
+    <div className="card-list">
+      {data.features.map((item, index) => {
+        return (
+          <CountryCard
+            key={index}
+            countryRegion={item.attributes.Country_Region}
+            confirmed={item.attributes.Confirmed}
+            active={item.attributes.Active}
+            deaths={item.attributes.Deaths}
+            recovered={item.attributes.Recovered}
+          />
+        );
+      })}
     </div>
   );
 };
