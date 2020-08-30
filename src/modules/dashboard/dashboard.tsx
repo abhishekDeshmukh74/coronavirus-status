@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, Fragment } from "react";
+import cogoToast from "cogo-toast";
 
 import { CountryCard } from "./country-card/country";
 import { AllData } from "./dashboard.interfaces";
@@ -16,7 +17,10 @@ export const Dashboard = () => {
   }, [fetchData]);
 
   if (!data) {
-    return <p>Loading...</p>;
+    cogoToast.loading("Fetching data...", {
+      hideAfter: 1,
+    });
+    return <Fragment />;
   }
 
   return (
