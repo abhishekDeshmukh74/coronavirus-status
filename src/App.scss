@@ -1,19 +1,91 @@
-*,
-*:before,
-*:after {
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,900");
+$border-radius-size: 14px;
+$color: #71a32a;
+
+* {
   box-sizing: border-box;
 }
-$color: #71a32a;
+
 body {
-  background: linear-gradient(
-      to bottom,
-      rgba(140, 122, 122, 1) 0%,
-      rgba(175, 135, 124, 1) 65%,
-      rgba(175, 135, 124, 1) 100%
-    )
-    fixed;
+  background: gray;
   background-size: cover;
   font: 14px/20px "Lato", Arial, sans-serif;
   color: #9e9e9e;
   margin-top: 30px;
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin: 20px 0;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .card {
+    width: 300px;
+    padding: 20px 10px;
+    .card-image {
+      border-top-left-radius: $border-radius-size;
+      border-top-right-radius: $border-radius-size;
+      background: url("//s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg");
+      img {
+        max-width: 100%;
+        display: block;
+        height: 187px;
+      }
+    }
+
+    .card-middle {
+      padding: 35px 0 10px 0;
+      background: white;
+      text-align: center;
+    }
+
+    .card-name {
+      font-size: 26px;
+      color: black;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .card-description {
+      padding: 20px 0;
+      font-weight: bold;
+      dd {
+        margin: 0;
+        color: red;
+        font-size: 20px;
+      }
+    }
+
+    .card-stats {
+      display: flex;
+      justify-content: space-between;
+      background: $color;
+      color: white;
+      font-weight: 700;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      font-size: large;
+      .one-third {
+        padding: 20px 10px;
+        border-right: 1px solid darken($color, 8%);
+        .stat {
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        .stat-value {
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }
